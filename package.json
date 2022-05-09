@@ -1,0 +1,29 @@
+{
+  "name": "app-bridge-api-node",
+  "version": "1.0.0",
+  "description": "A package to integrate Bridge APIS",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "javascript",
+    "fastify",
+    "node"
+  ],
+  "author": "Alpha Rages",
+  "email": "info@alpharages.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.0",
+    "fastify": "^3.29.0",
+    "moment": "^2.29.3",
+    "nodemon": "^2.0.16"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
