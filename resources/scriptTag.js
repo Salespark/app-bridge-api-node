@@ -9,6 +9,6 @@ const {postRequest} = require('../utils/requests');
  * @param {String} data.src - Source of the script
  * @return {Promise} Create a script tag
  * */
-exports.createScriptTag = (data) => {
+exports.createScriptTag = async (data) => {
     return postRequest('/scripttags/create', data);
 };
