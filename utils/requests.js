@@ -1,0 +1,23 @@
+import axios from 'axios';
+
+const URL = `https://webhooksapi.salesparkapps.com`;
+
+/**
+ * To send the http post requests
+ *
+ * @param {String} path
+ * @param {*} data
+ * @returns {Promise} The response from the API
+ * */
+const postRequest = (path, data) => {
+    const url = URL + path;
+    return axios.post(url, data).catch((err) => {
+        if (err.response) {
+            throw new Error(`Error occurred while hitting this route "${err.config.url}": ${err.response.data.message}`);
+        } else {
+            throw new Error('Something went wrong. Try again later!');
+        }
+    });
+};
+
+module.exports = {postRequest};
