@@ -1,7 +1,5 @@
-class Bridge {
+const {getMarketplace} = require('./resources/marketPlace');
 
-
-
-}
-
-module.exports = Bridge;
+module.exports = {
+    getMarketplace
+};

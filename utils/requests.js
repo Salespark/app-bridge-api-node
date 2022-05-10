@@ -7,7 +7,7 @@ const URL = `https://webhooksapi.salesparkapps.com`;
  *
  * @param {String} path
  * @param {*} data
- * @returns {Promise} The response from the API
+ * @return {Promise} The response from the API
  * */
 const postRequest = (path, data) => {
     const url = URL + path;
