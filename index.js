@@ -2,12 +2,29 @@ const {getMarketplace, createMarketplace, listMarketplace} = require('./resource
 const {createWebhook} = require('./resources/webhook');
 const {createScriptTag} = require('./resources/scriptTag');
 const {getCartById, listCarts} = require('./resources/cart');
+const initialize = require('./resources/initialize');
 
 /**
  * Bridge class
  * @class
  * */
 class Bridge {
+
+    /**
+     * Server token
+     *
+     * @public
+     * */
+    token = '';
+
+    /**
+     * Constructor of the class
+     *
+     * @constructor
+     * */
+    async constructor() {
+        this.token = await initialize();
+    }
 
     /**
      * Marketplace methods
@@ -43,6 +60,7 @@ class Bridge {
      *
      * @public
      * */
+
     cart = {
         get: getCartById,
         list: listCarts
