@@ -1,5 +1,6 @@
 const {getMarketplace, createMarketplace, listMarketplace} = require('./resources/marketPlace');
 const {createWebhook} = require('./resources/webhook');
+const {createScriptTag} = require('./resources/scriptTag');
 
 /**
  * Bridge class
@@ -25,6 +26,15 @@ class Bridge {
      * */
     webhook = {
         create: createWebhook
+    };
+
+    /**
+     * Script tag methods
+     *
+     * @public
+     * */
+    scriptTag = {
+        create: createScriptTag
     };
 
 }
