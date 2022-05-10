@@ -6,7 +6,7 @@ const {postRequest} = require('../utils/requests');
  * @param {String} shop
  * @return {Promise} The fetched marketplace
  * */
-exports.get = async (shop) => {
+exports.getMarketplace = async (shop) => {
     return postRequest('/marketplace', {marketplace: shop});
 };
 
@@ -17,9 +17,9 @@ exports.get = async (shop) => {
  * @param {String} data.marketplace - Name or url of the marketplace
  * @param {String} data.appToken - Token of the shopify store
  * @param {Object} data.payload - Data payload
- *@return {Promise} Create a marketplace
+ * @return {Promise} Create a marketplace
  * */
-exports.create = (data) => {
+exports.createMarketplace = (data) => {
     return postRequest('/marketplace/create', data);
 };
 
@@ -28,6 +28,6 @@ exports.create = (data) => {
  *
  * @return {Promise} List of marketplaces
  * */
-exports.list = () => {
+exports.listMarketplace = () => {
     return postRequest('/marketplace/list', {payload: {status: 'active'}});
 };

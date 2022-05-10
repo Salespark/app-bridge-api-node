@@ -1,4 +1,5 @@
-const {get, create, list} = require('./resources/marketPlace');
+const {getMarketplace, createMarketplace, listMarketplace} = require('./resources/marketPlace');
+const {createWebhook} = require('./resources/webhook');
 
 /**
  * Bridge class
@@ -12,9 +13,18 @@ class Bridge {
      * @public
      * */
     marketplace = {
-        get,
-        create,
-        list
+        get: getMarketplace,
+        create: createMarketplace,
+        list: listMarketplace
+    };
+
+    /**
+     * Webhook methods
+     *
+     * @public
+     * */
+    webhook = {
+        create: createWebhook
     };
 
 }
