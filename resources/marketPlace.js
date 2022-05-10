@@ -22,3 +22,12 @@ exports.getMarketplace = async (shop) => {
 exports.createMarketplace = (data) => {
     return postRequest('/marketplace/create', data);
 };
+
+/**
+ * Get the list of marketplaces
+ *
+ * @return {Promise} List of marketplaces
+ * */
+exports.listMarketplaces = () => {
+    return postRequest('/marketplace/list', {payload: {status: 'active'}});
+};

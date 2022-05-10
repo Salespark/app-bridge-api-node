@@ -1,4 +1,4 @@
-const {getMarketplace, createMarketplace} = require('./resources/marketPlace');
+const {getMarketplace, createMarketplace, listMarketplaces} = require('./resources/marketPlace');
 
 /**
  * Bridge class
@@ -22,6 +22,15 @@ class Bridge {
      * */
     createMarketplace() {
         return createMarketplace;
+    }
+
+    /**
+     * Create marketplace
+     *
+     * @public
+     * */
+    listMarketplaces() {
+        return listMarketplaces;
     }
 
 }
