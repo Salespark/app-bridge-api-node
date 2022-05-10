@@ -1,5 +1,17 @@
 const {getMarketplace} = require('./resources/marketPlace');
 
-module.exports = {
-    getMarketplace
-};
+/**
+ * Bridge class
+ * @class
+ * */
+class Bridge {
+
+    authToken = '';
+
+    getMarketPlace() {
+        return getMarketplace;
+    }
+
+}
+
+module.exports = Bridge;
