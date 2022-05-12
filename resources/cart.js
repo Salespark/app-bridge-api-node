@@ -7,7 +7,7 @@ const {postRequest} = require('../utils/requests');
  * @param {String} marketplaceId - Marketplace id
  * @return {Promise} The fetched cart from the marketplace
  * */
-exports.getCartById = async (cartId, marketplaceId) => {
+const get = async (cartId, marketplaceId) => {
     return postRequest(`/carts/find/${cartId}`, {marketplaceId});
 };
 
@@ -19,6 +19,11 @@ exports.getCartById = async (cartId, marketplaceId) => {
  * @param {Object} data.payload - Data payload
  * @return {Promise} List of carts
  * */
-exports.listCarts = (data) => {
+const list = async (data) => {
     return postRequest(`/carts/list`, data);
+};
+
+module.exports = {
+    get,
+    list
 };

@@ -7,7 +7,6 @@ const initialize = async () => {
     const tokenRes = await getServerToken();
     const serverToken = tokenRes?.data?.data?.token || '';
 
-
     // axios configs
     axios.defaults.headers.common['Accept'] = 'application/json';
     if (serverToken) {

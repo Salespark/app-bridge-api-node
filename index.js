@@ -1,7 +1,7 @@
-const {getMarketplace, createMarketplace, listMarketplace} = require('./resources/marketPlace');
-const {createWebhook} = require('./resources/webhook');
-const {createScriptTag} = require('./resources/scriptTag');
-const {getCartById, listCarts} = require('./resources/cart');
+const marketPlaceResources = require('./resources/marketPlace');
+const webhookResources = require('./resources/webhook');
+const scriptTagResources = require('./resources/scriptTag');
+const cartResources = require('./resources/cart');
 const initialize = require('./resources/initialize');
 
 /**
@@ -31,29 +31,21 @@ class Bridge {
      *
      * @public
      * */
-    marketplace = {
-        get: getMarketplace,
-        create: createMarketplace,
-        list: listMarketplace
-    };
+    marketplace = marketPlaceResources;
 
     /**
      * Webhook methods
      *
      * @public
      * */
-    webhook = {
-        create: createWebhook
-    };
+    webhook = webhookResources;
 
     /**
      * Script tag methods
      *
      * @public
      * */
-    scriptTag = {
-        create: createScriptTag
-    };
+    scriptTag = scriptTagResources;
 
     /**
      * Cart methods
@@ -61,10 +53,7 @@ class Bridge {
      * @public
      * */
 
-    cart = {
-        get: getCartById,
-        list: listCarts
-    };
+    cart = cartResources;
 
 }
 

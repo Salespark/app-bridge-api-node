@@ -6,7 +6,7 @@ const {postRequest} = require('../utils/requests');
  * @param {String} shop - Name or url of the shop
  * @return {Promise} The fetched marketplace
  * */
-exports.getMarketplace = async (shop) => {
+const get = async (shop) => {
     return postRequest('/marketplace', {marketplace: shop});
 };
 
@@ -19,7 +19,7 @@ exports.getMarketplace = async (shop) => {
  * @param {Object} data.payload - Data payload
  * @return {Promise} Create a marketplace
  * */
-exports.createMarketplace = async (data) => {
+const create = async (data) => {
     return postRequest('/marketplace/create', data);
 };
 
@@ -28,6 +28,12 @@ exports.createMarketplace = async (data) => {
  *
  * @return {Promise} List of marketplaces
  * */
-exports.listMarketplace = async () => {
+const list = async () => {
     return postRequest('/marketplace/list', {payload: {status: 'active'}});
+};
+
+module.exports = {
+    get,
+    create,
+    list
 };

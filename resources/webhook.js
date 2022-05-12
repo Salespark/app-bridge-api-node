@@ -9,6 +9,10 @@ const {postRequest} = require('../utils/requests');
  * @param {String} data.address - Redirect url
  * @return {Promise} Create a webhook
  * */
-exports.createWebhook = async (data) => {
+const create = async (data) => {
     return postRequest('/webhook/create', data);
+};
+
+module.exports = {
+    create
 };
