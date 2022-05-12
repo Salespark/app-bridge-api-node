@@ -13,9 +13,9 @@ class Bridge {
     /**
      * Server token
      *
-     * @public
+     * @private
      * */
-    token = '';
+    #token = '';
 
     /**
      * Constructor of the class
@@ -23,9 +23,18 @@ class Bridge {
      * @param {String} [apiKey = null] - Api key of the user
      * @constructor
      * */
-    async constructor(apiKey) {
-        this.token = await initialize(apiKey);
+    async constructor(apiKey = null) {
+        this.#token = await initialize(apiKey);
     }
+
+    /**
+     * Server token
+     *
+     * @public
+     * */
+    getToken() {
+        return this.#token
+    };
 
     /**
      * Marketplace methods
