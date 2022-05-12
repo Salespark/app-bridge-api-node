@@ -20,10 +20,11 @@ class Bridge {
     /**
      * Constructor of the class
      *
+     * @param {String} [apiKey = null] - Api key of the user
      * @constructor
      * */
-    async constructor() {
-        this.token = await initialize();
+    async constructor(apiKey) {
+        this.token = await initialize(apiKey);
     }
 
     /**

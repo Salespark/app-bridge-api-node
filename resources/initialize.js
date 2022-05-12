@@ -1,10 +1,10 @@
 const axios = require('axios');
-const {getServerToken} = require('./auth');
+const authResource = require('./auth');
 
-const initialize = async () => {
+const initialize = async (apiKey) => {
 
     // fetching the server token
-    const tokenRes = await getServerToken();
+    const tokenRes = await authResource.getToken(apiKey);
     const serverToken = tokenRes?.data?.data?.token || '';
 
     // axios configs
