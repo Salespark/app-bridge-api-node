@@ -29,6 +29,7 @@ class Bridge {
     /**
      * Server token
      *
+     * @return {String} server token
      * @public
      * */
     getToken() {
