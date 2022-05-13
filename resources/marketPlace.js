@@ -6,7 +6,7 @@ const {postRequest} = require('../utils/requests');
  * @param {String} shop - Name or url of the shop
  * @return {Promise} The fetched marketplace
  * */
-const get = async (shop) => {
+const findByName = async (shop) => {
     return postRequest('/marketplace', {marketplace: shop});
 };
 
@@ -33,7 +33,7 @@ const list = async () => {
 };
 
 module.exports = {
-    get,
+    findByName,
     create,
     list
 };
