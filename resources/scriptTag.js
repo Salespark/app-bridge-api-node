@@ -10,7 +10,8 @@ const {postRequest} = require('../utils/requests');
  * @return {Promise} Create a script tag
  * */
 const create = async (data) => {
-    return postRequest('/scripttags/create', data);
+    const res = await postRequest('/scripttags/create', data);
+    return res?.data?.data;
 };
 
 

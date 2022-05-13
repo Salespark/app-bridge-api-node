@@ -10,7 +10,8 @@ const {postRequest} = require('../utils/requests');
  * @return {Promise} Create a webhook
  * */
 const create = async (data) => {
-    return postRequest('/webhook/create', data);
+    const res = postRequest('/webhook/create', data);
+    return res?.data?.data;
 };
 
 module.exports = {
