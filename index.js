@@ -18,12 +18,11 @@ class Bridge {
     token = '';
 
     /**
-     * Constructor of the class
+     * First Method to call
      *
      * @param {String} [apiKey = null] - Api key of the user
-     * @constructor
      * */
-    async constructor(apiKey) {
+    async init(apiKey) {
         this.token = await initialize(apiKey);
     }
 

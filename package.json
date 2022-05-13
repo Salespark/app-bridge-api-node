@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A package to integrate Bridge APIS",
   "main": "index.js",
-  "types": "index.d.ts",
   "scripts": {},
   "keywords": [
     "javascript"
@@ -11,10 +10,10 @@
   "author": "Alpha Rages",
   "email": "info@alpharages.com",
   "license": "ISC",
-  "devDependencies": {
-    "typescript": "^4.6.4"
-  },
   "dependencies": {
     "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
   }
 }
