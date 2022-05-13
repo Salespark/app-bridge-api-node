@@ -7,7 +7,8 @@ const {postRequest} = require('../utils/requests');
  * @return {Promise} The fetched marketplace
  * */
 const findByName = async (shop) => {
-    return postRequest('/marketplace', {marketplace: shop});
+    const res = await postRequest('/marketplace', {marketplace: shop});
+    return res?.data?.data;
 };
 
 /**
@@ -20,7 +21,8 @@ const findByName = async (shop) => {
  * @return {Promise} Create a marketplace
  * */
 const create = async (data) => {
-    return postRequest('/marketplace/create', data);
+    const res = await postRequest('/marketplace/create', data);
+    return res?.data?.data;
 };
 
 /**
@@ -29,7 +31,8 @@ const create = async (data) => {
  * @return {Promise} List of marketplaces
  * */
 const list = async () => {
-    return postRequest('/marketplace/list', {payload: {status: 'active'}});
+    const res = await postRequest('/marketplace/list', {payload: {status: 'active'}});
+    return res?.data?.data;
 };
 
 module.exports = {
