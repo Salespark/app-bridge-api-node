@@ -1,6 +1,6 @@
 {
   "name": "@alpharages/app-bridge-api-node",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A package to integrate Bridge APIS",
   "main": "index.js",
   "author": "Alpha Rages",
@@ -11,10 +11,6 @@
   },
   "keywords": [
     "javascript"
-  ],
-  "files": [
-    "index.js",
-    "types/index.d.ts"
   ],
   "types": "types",
   "dependencies": {
