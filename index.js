@@ -1,7 +1,7 @@
-const {getMarketplace, createMarketplace, listMarketplace} = require('./resources/marketPlace');
-const {createWebhook} = require('./resources/webhook');
-const {createScriptTag} = require('./resources/scriptTag');
-const {getCartById, listCarts} = require('./resources/cart');
+const marketPlaceResources = require('./resources/marketPlace');
+const webhookResources = require('./resources/webhook');
+const scriptTagResources = require('./resources/scriptTag');
+const cartResources = require('./resources/cart');
 const initialize = require('./resources/initialize');
 
 /**
@@ -13,47 +13,49 @@ class Bridge {
     /**
      * Server token
      *
-     * @public
+     * @private
      * */
-    token = '';
+    #token = '';
 
     /**
-     * Constructor of the class
+     * First method to call
      *
-     * @constructor
+     * @param {String} [apiKey = null] - Api key of the user
      * */
-    async constructor() {
-        this.token = await initialize();
+    async init(apiKey = null) {
+        this.#token = await initialize(apiKey);
     }
+
+    /**
+     * Server token
+     *
+     * @return {String} server token
+     * @public
+     * */
+    getToken() {
+        return this.#token;
+    };
 
     /**
      * Marketplace methods
      *
      * @public
      * */
-    marketplace = {
-        get: getMarketplace,
-        create: createMarketplace,
-        list: listMarketplace
-    };
+    marketplace = marketPlaceResources;
 
     /**
      * Webhook methods
      *
      * @public
      * */
-    webhook = {
-        create: createWebhook
-    };
+    webhook = webhookResources;
 
     /**
      * Script tag methods
      *
      * @public
      * */
-    scriptTag = {
-        create: createScriptTag
-    };
+    scriptTag = scriptTagResources;
 
     /**
      * Cart methods
@@ -61,10 +63,7 @@ class Bridge {
      * @public
      * */
 
-    cart = {
-        get: getCartById,
-        list: listCarts
-    };
+    cart = cartResources;
 
 }
 

@@ -1,5 +1,3 @@
-const {postRequest} = require('../utils/requests');
-
 /**
  * Create a script tag
  *
@@ -9,12 +7,8 @@ const {postRequest} = require('../utils/requests');
  * @param {String} data.src - Source of the script
  * @return {Promise} Create a script tag
  * */
-const create = async (data) => {
-    const res = await postRequest('/scripttags/create', data);
-    return res?.data?.data;
-};
-
-
-module.exports = {
-    create
-};
+export function create(data: {
+    marketplaceId: string;
+    event: string;
+    src: string;
+}): Promise<any>;

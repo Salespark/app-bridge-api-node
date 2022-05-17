@@ -1,6 +1,5 @@
-import axios from 'axios';
-
-const URL = `https://webhooksapi.salesparkapps.com`;
+const axios = require('axios').default;
+const {constants} = require('./constants');
 
 /**
  * To send the http post requests
@@ -10,7 +9,7 @@ const URL = `https://webhooksapi.salesparkapps.com`;
  * @return {Promise} The response from the API
  * */
 const postRequest = (path, data) => {
-    const url = URL + path;
+    const url = constants.URL + path;
     return axios.post(url, data).catch((err) => {
         if (err.response) {
             throw new Error(`Error occurred while hitting this route "${err.config.url}": ${err.response.data.message}`);

@@ -1,5 +1,3 @@
-const {postRequest} = require('../utils/requests');
-
 /**
  * Create a webhook
  *
@@ -9,11 +7,8 @@ const {postRequest} = require('../utils/requests');
  * @param {String} data.address - Redirect url
  * @return {Promise} Create a webhook
  * */
-const create = async (data) => {
-    const res = postRequest('/webhook/create', data);
-    return res?.data?.data;
-};
-
-module.exports = {
-    create
-};
+export function create(data: {
+    marketplaceId: string;
+    topic: string;
+    address: string;
+}): Promise<any>;
