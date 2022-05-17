@@ -1,17 +1,22 @@
 {
   "name": "@alpharages/app-bridge-api-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package to integrate Bridge APIS",
   "main": "index.js",
+  "author": "Alpha Rages",
+  "email": "info@alpharages.com",
+  "license": "ISC",
   "scripts": {
     "types": "npx -p typescript tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types"
   },
   "keywords": [
     "javascript"
   ],
-  "author": "Alpha Rages",
-  "email": "info@alpharages.com",
-  "license": "ISC",
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types",
   "dependencies": {
     "axios": "^0.27.2"
   },
