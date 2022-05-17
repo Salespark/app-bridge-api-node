@@ -1,5 +1,5 @@
 {
-  "name": "app-bridge-api-node",
+  "name": "@alpharages/app-bridge-api-node",
   "version": "1.0.0",
   "description": "A package to integrate Bridge APIS",
   "main": "index.js",
@@ -17,5 +17,13 @@
   },
   "devDependencies": {
     "typescript": "^4.6.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Salespark/app-bridge-api-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Salespark/app-bridge-api-node/issues"
+  },
+  "homepage": "https://github.com/Salespark/app-bridge-api-node#readme"
 }
