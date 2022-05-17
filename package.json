@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A package to integrate Bridge APIS",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "types": "npx -p typescript tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types"
+  },
   "keywords": [
     "javascript"
   ],
