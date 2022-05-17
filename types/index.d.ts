@@ -41,7 +41,6 @@ declare class Bridge {
      * @public
      * */
     public cart: typeof cartResources;
-    #private;
 }
 import marketPlaceResources = require("./resources/marketPlace");
 import webhookResources = require("./resources/webhook");
