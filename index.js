@@ -21,6 +21,7 @@ class Bridge {
      * First method to call
      *
      * @param {String} [apiKey = null] - Api key of the user
+     * @public
      * */
     async init(apiKey = null) {
         this.#token = await initialize(apiKey);
