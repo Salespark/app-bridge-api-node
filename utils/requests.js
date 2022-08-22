@@ -1,12 +1,13 @@
 const axios = require('axios').default;
 const {constants} = require('./constants');
+const {AxiosResponse} = require("axios");
 
 /**
  * To send the http post requests
  *
  * @param {String} path
  * @param {*} data
- * @return {Promise} The response from the API
+ * @return {Promise<AxiosResponse>} The response from the API
  * */
 const postRequest = (path, data) => {
     const url = constants.URL + path;
