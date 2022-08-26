@@ -1,10 +1,29 @@
+import { ResponseDto } from "../dto/types";
+
+/**
+ * Get the list of marketplaces
+ *
+ * @param {Object} data - Data to fetch the relevant marketplace
+ * @param {Object} data.payload - Data payload
+ * @return {Promise<ResponseDto>} List of marketplaces
+ * */
+export function list(data: {
+    payload: any;
+}): Promise<ResponseDto>;
 /**
  * Get the given marketplace
  *
  * @param {String} shop - Name or url of the shop
- * @return {Promise} The fetched marketplace
+ * @return {Promise<ResponseDto>} The fetched marketplace
  * */
-export function findByName(shop: string): Promise<any>;
+export function findByName(shop: string): Promise<ResponseDto>;
+/**
+ * Get the given marketplace
+ *
+ * @param {String} id - Marketplace id
+ * @return {Promise<ResponseDto>} The fetched marketplace
+ * */
+export function findById(id: string): Promise<ResponseDto>;
 /**
  * Create a marketplace
  *
@@ -12,16 +31,24 @@ export function findByName(shop: string): Promise<any>;
  * @param {String} data.marketplace - Name or url of the marketplace
  * @param {String} data.appToken - Token of the shopify store
  * @param {Object} data.payload - Data payload
- * @return {Promise} Create a marketplace
+ * @return {Promise<ResponseDto>} Create a marketplace
  * */
 export function create(data: {
     marketplace: string;
     appToken: string;
     payload: any;
-}): Promise<any>;
+}): Promise<ResponseDto>;
 /**
- * Get the list of marketplaces
+ * update a marketplace
  *
- * @return {Promise} List of marketplaces
+ * @param {Object} data - Data to create marketplace
+ * @param {String} data.marketplaceId - Marketplace id
+ * @param {String} [data.appToken] - Token of the shopify store
+ * @param {Object} data.payload - Data payload
+ * @return {Promise<ResponseDto>} update a marketplace
  * */
-export function list(): Promise<any>;
+export function update(data: {
+    marketplaceId: string;
+    appToken?: string;
+    payload: any;
+}): Promise<ResponseDto>;

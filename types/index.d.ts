@@ -8,8 +8,9 @@ declare class Bridge {
      * First method to call
      *
      * @param {String} [apiKey = null] - Api key of the user
+     * @public
      * */
-    init(apiKey?: string): Promise<void>;
+    public init(apiKey?: string): Promise<void>;
     /**
      * Server token
      *
@@ -41,8 +42,16 @@ declare class Bridge {
      * @public
      * */
     public cart: typeof cartResources;
+    /**
+     * Customer methods
+     *
+     * @public
+     * */
+    public customer: typeof customerResources;
+    #private;
 }
 import marketPlaceResources = require("./resources/marketPlace");
 import webhookResources = require("./resources/webhook");
 import scriptTagResources = require("./resources/scriptTag");
 import cartResources = require("./resources/cart");
+import customerResources = require("./resources/customer");

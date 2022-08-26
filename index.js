@@ -2,6 +2,7 @@ const marketPlaceResources = require('./resources/marketPlace');
 const webhookResources = require('./resources/webhook');
 const scriptTagResources = require('./resources/scriptTag');
 const cartResources = require('./resources/cart');
+const customerResources = require('./resources/customer');
 const initialize = require('./resources/initialize');
 
 /**
@@ -12,7 +13,6 @@ class Bridge {
 
     /**
      * Server token
-     *
      * @private
      * */
     #token = '';
@@ -63,8 +63,14 @@ class Bridge {
      *
      * @public
      * */
-
     cart = cartResources;
+
+    /**
+     * Customer methods
+     *
+     * @public
+     * */
+    customer = customerResources;
 
 }
 

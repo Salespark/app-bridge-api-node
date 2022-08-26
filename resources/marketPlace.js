@@ -1,4 +1,16 @@
-const {postRequest} = require('../utils/requests');
+const {postRequest, putRequest} = require('../utils/requests');
+
+/**
+ * Get the list of marketplaces
+ *
+ * @param {Object} data - Data to fetch the relevant marketplace
+ * @param {Object} data.payload - Data payload
+ * @return {Promise} List of marketplaces
+ * */
+const list = async (data) => {
+    const res = await postRequest('/marketplace/list', data);
+    return res?.data?.data;
+};
 
 /**
  * Get the given marketplace
@@ -8,6 +20,17 @@ const {postRequest} = require('../utils/requests');
  * */
 const findByName = async (shop) => {
     const res = await postRequest('/marketplace', {marketplace: shop});
+    return res?.data?.data;
+};
+
+/**
+ * Get the given marketplace
+ *
+ * @param {String} id - Marketplace id
+ * @return {Promise} The fetched marketplace
+ * */
+const findById = async (id) => {
+    const res = await postRequest('/marketplace', {marketplaceId: id});
     return res?.data?.data;
 };
 
@@ -26,17 +49,23 @@ const create = async (data) => {
 };
 
 /**
- * Get the list of marketplaces
+ * update a marketplace
  *
- * @return {Promise} List of marketplaces
+ * @param {Object} data - Data to create marketplace
+ * @param {String} data.marketplaceId - Marketplace id
+ * @param {String} [data.appToken] - Token of the shopify store
+ * @param {Object} data.payload - Data payload
+ * @return {Promise} update a marketplace
  * */
-const list = async () => {
-    const res = await postRequest('/marketplace/list', {payload: {status: 'active'}});
+const update = async (data) => {
+    const res = await putRequest('/marketplace/create', data);
     return res?.data?.data;
 };
 
 module.exports = {
+    list,
     findByName,
+    findById,
     create,
-    list
+    update,
 };
