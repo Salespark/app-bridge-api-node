@@ -3,9 +3,13 @@ import { ResponseDto } from "../dto/types";
 /**
  * Get the list of marketplaces
  *
+ * @param {Object} data - Data to fetch the relevant marketplace
+ * @param {Object} data.payload - Data payload
  * @return {Promise<ResponseDto>} List of marketplaces
  * */
-export function list(): Promise<ResponseDto>;
+export function list(data: {
+    payload: any;
+}): Promise<ResponseDto>;
 /**
  * Get the given marketplace
  *
@@ -13,6 +17,13 @@ export function list(): Promise<ResponseDto>;
  * @return {Promise<ResponseDto>} The fetched marketplace
  * */
 export function findByName(shop: string): Promise<ResponseDto>;
+/**
+ * Get the given marketplace
+ *
+ * @param {String} id - Marketplace id
+ * @return {Promise<ResponseDto>} The fetched marketplace
+ * */
+export function findById(id: string): Promise<ResponseDto>;
 /**
  * Create a marketplace
  *

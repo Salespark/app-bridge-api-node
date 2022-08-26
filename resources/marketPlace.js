@@ -3,10 +3,12 @@ const {postRequest, putRequest} = require('../utils/requests');
 /**
  * Get the list of marketplaces
  *
+ * @param {Object} data - Data to fetch the relevant marketplace
+ * @param {Object} data.payload - Data payload
  * @return {Promise} List of marketplaces
  * */
-const list = async () => {
-    const res = await postRequest('/marketplace/list', {payload: {status: 'active'}});
+const list = async (data) => {
+    const res = await postRequest('/marketplace/list', data);
     return res?.data?.data;
 };
 
@@ -18,6 +20,17 @@ const list = async () => {
  * */
 const findByName = async (shop) => {
     const res = await postRequest('/marketplace', {marketplace: shop});
+    return res?.data?.data;
+};
+
+/**
+ * Get the given marketplace
+ *
+ * @param {String} id - Marketplace id
+ * @return {Promise} The fetched marketplace
+ * */
+const findById = async (id) => {
+    const res = await postRequest('/marketplace', {marketplaceId: id});
     return res?.data?.data;
 };
 
@@ -52,6 +65,7 @@ const update = async (data) => {
 module.exports = {
     list,
     findByName,
+    findById,
     create,
     update,
 };
