@@ -1,3 +1,5 @@
+import { ResponseDto } from "../dto/types";
+
 /**
  * Get the list of carts form the given marketplace
  *
@@ -30,4 +32,3 @@ export function aggregate(payload: {
     marketplaceId: string;
     query: string;
 }): Promise<ResponseDto>;
-import { ResponseDto } from "../dto/types";
