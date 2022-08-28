@@ -11,7 +11,7 @@ const {postRequest} = require('../utils/requests');
  * */
 const create = async (data) => {
     const res = postRequest('/webhook/create', data);
-    return res?.data?.data;
+    return res?.data;
 };
 
 module.exports = {
