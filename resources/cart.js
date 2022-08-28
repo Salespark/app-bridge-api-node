@@ -10,7 +10,7 @@ const {postRequest} = require('../utils/requests');
  * */
 const list = async (data) => {
     const res = await postRequest(`/carts/list`, data);
-    return res?.data?.data;
+    return res?.data;
 };
 
 /**
@@ -22,7 +22,7 @@ const list = async (data) => {
  * */
 const get = async (cartId, marketplaceId) => {
     const res = await postRequest(`/carts/find/${cartId}`, {marketplaceId});
-    return res?.data?.data;
+    return res?.data;
 };
 
 /**
@@ -35,7 +35,7 @@ const get = async (cartId, marketplaceId) => {
  * */
 const aggregate = async (payload) => {
     const res = await postRequest('/carts/aggregate', payload);
-    return res?.data?.data;
+    return res?.data;
 };
 
 module.exports = {

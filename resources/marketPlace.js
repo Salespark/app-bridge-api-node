@@ -9,7 +9,7 @@ const {postRequest, putRequest} = require('../utils/requests');
  * */
 const list = async (data) => {
     const res = await postRequest('/marketplace/list', data);
-    return res?.data?.data;
+    return res?.data;
 };
 
 /**
@@ -20,7 +20,7 @@ const list = async (data) => {
  * */
 const findByName = async (shop) => {
     const res = await postRequest('/marketplace', {marketplace: shop});
-    return res?.data?.data;
+    return res?.data;
 };
 
 /**
@@ -31,7 +31,7 @@ const findByName = async (shop) => {
  * */
 const findById = async (id) => {
     const res = await postRequest('/marketplace', {marketplaceId: id});
-    return res?.data?.data;
+    return res?.data;
 };
 
 /**
@@ -45,7 +45,7 @@ const findById = async (id) => {
  * */
 const create = async (data) => {
     const res = await postRequest('/marketplace/create', data);
-    return res?.data?.data;
+    return res?.data;
 };
 
 /**
@@ -59,7 +59,7 @@ const create = async (data) => {
  * */
 const update = async (data) => {
     const res = await putRequest('/marketplace/create', data);
-    return res?.data?.data;
+    return res?.data;
 };
 
 module.exports = {

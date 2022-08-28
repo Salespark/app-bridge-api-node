@@ -10,7 +10,7 @@ const {postRequest, putRequest} = require('../utils/requests');
  * */
 const list = async (data) => {
     const res = await postRequest(`/customers/list`, data);
-    return res?.data?.data;
+    return res?.data;
 };
 
 /**
@@ -23,7 +23,7 @@ const list = async (data) => {
  * */
 const getById = async (data) => {
     const res = await postRequest(`/customers/find-by-id`, data);
-    return res?.data?.data;
+    return res?.data;
 };
 
 /**
@@ -37,7 +37,7 @@ const getById = async (data) => {
  * */
 const create = async (data) => {
     const res = await postRequest('/customers/create', data);
-    return res?.data?.data;
+    return res?.data
 };
 
 /**
@@ -51,7 +51,7 @@ const create = async (data) => {
  * */
 const update = async (data) => {
     const res = await putRequest('/customers/create', data);
-    return res?.data?.data;
+    return res?.data;
 };
 
 module.exports = {
