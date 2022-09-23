@@ -58,7 +58,7 @@ const create = async (data) => {
  * @return {Promise} update a marketplace
  * */
 const update = async (data) => {
-    const res = await putRequest('/marketplace/create', data);
+    const res = await putRequest('/marketplace/update', data);
     return res?.data;
 };
 

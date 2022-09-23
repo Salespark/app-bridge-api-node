@@ -1,4 +1,8 @@
-export = Bridge;
+import marketPlaceResources = require("./resources/marketPlace");
+import webhookResources = require("./resources/webhook");
+import scriptTagResources = require("./resources/scriptTag");
+import cartResources = require("./resources/cart");
+import customerResources = require("./resources/customer");
 /**
  * Bridge class
  * @class
@@ -18,6 +22,18 @@ declare class Bridge {
      * @public
      * */
     public getToken(): string;
+    /**
+     * Generate Server token
+     *
+     * @return {String} server token
+     * @public
+     * */
+    public generateToken(apiKey?: string): Promise<string>;
+    /**
+     * constants
+     * @public
+     * */
+    public getConstants(): {[key: string] : any};
     /**
      * Marketplace methods
      *
@@ -48,10 +64,6 @@ declare class Bridge {
      * @public
      * */
     public customer: typeof customerResources;
-    #private;
 }
-import marketPlaceResources = require("./resources/marketPlace");
-import webhookResources = require("./resources/webhook");
-import scriptTagResources = require("./resources/scriptTag");
-import cartResources = require("./resources/cart");
-import customerResources = require("./resources/customer");
+
+export = Bridge;

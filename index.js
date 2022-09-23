@@ -4,6 +4,8 @@ const scriptTagResources = require('./resources/scriptTag');
 const cartResources = require('./resources/cart');
 const customerResources = require('./resources/customer');
 const initialize = require('./resources/initialize');
+const config = require('./resources/config');
+const {constants} = require("./utils/constants");
 
 /**
  * Bridge class
@@ -25,6 +27,7 @@ class Bridge {
      * */
     async init(apiKey = null) {
         this.#token = await initialize(apiKey);
+        config.axiosInterpretation(this.#token);
     }
 
     /**
@@ -36,6 +39,24 @@ class Bridge {
     getToken() {
         return this.#token;
     };
+
+    /**
+     * Generate Server token
+     *
+     * @return {String} server token
+     * @public
+     * */
+    async generateToken(apiKey = null) {
+        return await initialize(apiKey);
+    };
+
+    /**
+     * constants
+     * @public
+     * */
+    getConstants() {
+        return constants;
+    }
 
     /**
      * Marketplace methods

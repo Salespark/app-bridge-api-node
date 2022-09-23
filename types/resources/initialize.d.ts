@@ -1,2 +1,2 @@
 export = initialize;
-declare function initialize(apiKey: any): Promise<any>;
+declare function initialize(apiKey: string | null): Promise<any>;
