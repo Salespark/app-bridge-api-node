@@ -30,7 +30,7 @@ const findByName = async (shop) => {
  * @return {Promise} The fetched marketplace
  * */
 const findById = async (id) => {
-    const res = await postRequest('/marketplace', {marketplaceId: id});
+    const res = await postRequest('/marketplace-by-id', {marketplaceId: id});
     return res?.data;
 };
 
