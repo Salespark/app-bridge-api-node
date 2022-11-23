@@ -3,6 +3,10 @@ const webhookResources = require('./resources/webhook');
 const scriptTagResources = require('./resources/scriptTag');
 const cartResources = require('./resources/cart');
 const customerResources = require('./resources/customer');
+const feedbackResources = require('./resources/feedback');
+const feedbackCommentResources = require('./resources/comment');
+const feedbackReactionResources = require('./resources/feedbackReaction');
+const commentReactionResources = require('./resources/commentReaction');
 const initialize = require('./resources/initialize');
 const config = require('./resources/config');
 const {constants} = require("./utils/constants");
@@ -92,6 +96,34 @@ class Bridge {
      * @public
      * */
     customer = customerResources;
+
+    /**
+     * Feedback methods
+     *
+     * @public
+     * */
+    feedback = feedbackResources;
+
+    /**
+     * Comment methods
+     *
+     * @public
+     * */
+    comment = feedbackCommentResources;
+
+    /**
+     * Feedback reaction methods
+     *
+     * @public
+     * */
+    feedbackReaction = feedbackReactionResources;
+
+    /**
+     * Comment reaction methods
+     *
+     * @public
+     * */
+    commentReaction = commentReactionResources;
 
 }
 
