@@ -3,6 +3,10 @@ import webhookResources = require("./resources/webhook");
 import scriptTagResources = require("./resources/scriptTag");
 import cartResources = require("./resources/cart");
 import customerResources = require("./resources/customer");
+import feedbackResources = require("./resources/feedback");
+import feedbackCommentResources = require("./resources/comment");
+import feedbackReactionResources = require("./resources/feedbackReaction");
+import commentReactionResources = require("./resources/commentReaction");
 /**
  * Bridge class
  * @class
@@ -11,10 +15,10 @@ declare class Bridge {
     /**
      * First method to call
      *
-     * @param {String} [apiKey = null] - Api key of the user
+     * @param {String | null} [apiKey = null] - Api key of the user
      * @public
      * */
-    public init(apiKey?: string): Promise<void>;
+    public init(apiKey?: string | null): Promise<void>;
     /**
      * Server token
      *
@@ -25,15 +29,18 @@ declare class Bridge {
     /**
      * Generate Server token
      *
+     * @param {String | null} [apiKey = null] - Api key of the user
      * @return {String} server token
      * @public
      * */
-    public generateToken(apiKey?: string): Promise<string>;
+    public generateToken(apiKey?: string | null): string;
     /**
      * constants
      * @public
      * */
-    public getConstants(): {[key: string] : any};
+    public getConstants(): {
+        URL: string;
+    };
     /**
      * Marketplace methods
      *
@@ -64,6 +71,29 @@ declare class Bridge {
      * @public
      * */
     public customer: typeof customerResources;
+    /**
+     * Feedback methods
+     *
+     * @public
+     * */
+    public feedback: typeof feedbackResources;
+    /**
+     * Comment methods
+     *
+     * @public
+     * */
+    public comment: typeof feedbackCommentResources;
+    /**
+     * Feedback reaction methods
+     *
+     * @public
+     * */
+    public feedbackReaction: typeof feedbackReactionResources;
+    /**
+     * Comment reaction methods
+     *
+     * @public
+     * */
+    public commentReaction: typeof commentReactionResources;
 }
-
 export = Bridge;

@@ -1,2 +1,6 @@
-export = axiosInterpretation;
-declare function axiosInterpretation(serverToken: string): void;
+/**
+ * Set axios header's
+ *
+ * @param {string} serverToken - Server Authorization token
+ * */
+export function axiosInterpretation(serverToken: string): void;

@@ -26,11 +26,11 @@ class Bridge {
     /**
      * First method to call
      *
-     * @param {String} [apiKey = null] - Api key of the user
+     * @param {String | null} [apiKey = null] - Api key of the user
      * @public
      * */
     async init(apiKey = null) {
-        this.#token = await initialize(apiKey);
+        this.#token = initialize(apiKey);
         config.axiosInterpretation(this.#token);
     }
 
@@ -47,11 +47,12 @@ class Bridge {
     /**
      * Generate Server token
      *
+     * @param {String | null} [apiKey = null] - Api key of the user
      * @return {String} server token
      * @public
      * */
     async generateToken(apiKey = null) {
-        return await initialize(apiKey);
+        return initialize(apiKey);
     };
 
     /**
