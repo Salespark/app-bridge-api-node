@@ -30,7 +30,7 @@ class Bridge {
      * @public
      * */
     async init(apiKey = null) {
-        this.#token = initialize(apiKey);
+        this.#token = await initialize(apiKey);
         config.axiosInterpretation(this.#token);
     }
 
@@ -48,11 +48,11 @@ class Bridge {
      * Generate Server token
      *
      * @param {String | null} [apiKey = null] - Api key of the user
-     * @return {String} server token
+     * @return {Promise<String>} server token
      * @public
      * */
     async generateToken(apiKey = null) {
-        return initialize(apiKey);
+        return await initialize(apiKey);
     };
 
     /**

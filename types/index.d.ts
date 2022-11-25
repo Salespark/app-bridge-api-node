@@ -30,10 +30,10 @@ declare class Bridge {
      * Generate Server token
      *
      * @param {String | null} [apiKey = null] - Api key of the user
-     * @return {String} server token
+     * @return {Promise<String>} server token
      * @public
      * */
-    public generateToken(apiKey?: string | null): string;
+    public generateToken(apiKey?: string | null): Promise<string>;
     /**
      * constants
      * @public

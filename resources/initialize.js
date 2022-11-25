@@ -4,7 +4,7 @@ const authResource = require('./auth');
  * Get the server token
  *
  * @param {string | null} [apiKey = null] - Api key of the user
- * @return {string} The fetched token from the server
+ * @return {Promise<string>} The fetched token from the server
  * */
 
 const initialize = async (apiKey) => {
