@@ -1,6 +1,6 @@
 {
   "name": "@alpharages/app-bridge-api-node",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A package to integrate Bridge APIS",
   "main": "index.js",
   "author": "Alpha Rages",
