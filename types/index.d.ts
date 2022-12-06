@@ -3,9 +3,11 @@ import webhookResources = require("./resources/webhook");
 import scriptTagResources = require("./resources/scriptTag");
 import cartResources = require("./resources/cart");
 import customerResources = require("./resources/customer");
+import featureResources = require("./resources/feature");
+import featureCommentResources = require("./resources/featureComment");
+import featureReactionResources = require("./resources/featureReaction");
 import feedbackResources = require("./resources/feedback");
-import feedbackCommentResources = require("./resources/comment");
-import feedbackReactionResources = require("./resources/feedbackReaction");
+import feedbackCommentResources = require("./resources/feedbackComment");
 import commentReactionResources = require("./resources/commentReaction");
 /**
  * Bridge class
@@ -72,23 +74,35 @@ declare class Bridge {
      * */
     public customer: typeof customerResources;
     /**
+     * Feature methods
+     *
+     * @public
+     * */
+    public feature: typeof featureResources;
+    /**
+     * Feature Comment methods
+     *
+     * @public
+     * */
+    public featureComment: typeof featureCommentResources;
+    /**
+     * Feature reaction methods
+     *
+     * @public
+     * */
+    public featureReaction: typeof featureReactionResources;
+    /**
      * Feedback methods
      *
      * @public
      * */
     public feedback: typeof feedbackResources;
     /**
-     * Comment methods
+     * Feedback Comment methods
      *
      * @public
      * */
-    public comment: typeof feedbackCommentResources;
-    /**
-     * Feedback reaction methods
-     *
-     * @public
-     * */
-    public feedbackReaction: typeof feedbackReactionResources;
+    public feedbackComment: typeof feedbackCommentResources;
     /**
      * Comment reaction methods
      *

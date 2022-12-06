@@ -5,10 +5,15 @@ const {getRequest, postRequest, putRequest, deleteRequest} = require('../utils/r
  *
  * @param {string} feedbackId - ID of the feedback
  * @param {Object | null} data - Data to fetch the relevant feedback
+ * @param {string} [data.startDate]
+ * @param {string} [data.endDate]
+ * @param {number} [data.pageNo]
+ * @param {number} [data.limit]
+ * @param {string} [data.select]
  * @return {Promise} List of comment
  * */
 const list = async (feedbackId, data) => {
-    const res = await getRequest(`/comment/list/${feedbackId}`, data);
+    const res = await getRequest(`/feedback-comment/list/${feedbackId}`, data);
     return res?.data;
 };
 
@@ -19,11 +24,11 @@ const list = async (feedbackId, data) => {
  * @param {String} data.userId - ID of the user
  * @param {String} data.feedbackId
  * @param {String} data.comment
- * @param {String | null} data.parentId - comment id of parent comment
+ * @param {String | null} [data.parentId] - comment id of parent comment
  * @return {Promise} Create a comment
  * */
 const create = async (data) => {
-    const res = await postRequest('/comment/create', data);
+    const res = await postRequest('/feedback-comment/create', data);
     return res?.data
 };
 
@@ -37,7 +42,7 @@ const create = async (data) => {
  * @return {Promise} update a comment
  * */
 const update = async (commentId, data) => {
-    const res = await putRequest(`/comment/update/${commentId}`, data);
+    const res = await putRequest(`/feedback-comment/update/${commentId}`, data);
     return res?.data;
 };
 
@@ -50,7 +55,7 @@ const update = async (commentId, data) => {
  * @return {Promise} delete a comment
  * */
 const destroy = async (commentId, data) => {
-    const res = await deleteRequest(`/comment/delete/${commentId}`, data);
+    const res = await deleteRequest(`/feedback-comment/delete/${commentId}`, data);
     return res?.data;
 };
 

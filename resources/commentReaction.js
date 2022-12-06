@@ -5,7 +5,6 @@ const {postRequest} = require('../utils/requests');
  *
  * @param {Object} data - Data for reaction
  * @param {String} data.userId - ID of the user
- * @param {String} data.feedbackId
  * @param {String} data.commentId
  * @param {String} data.reaction
  * @return {Promise} Create/update/delete a Reaction

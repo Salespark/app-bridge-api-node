@@ -3,3 +3,10 @@ export declare type ResponseDto = {
     message: string;
     data: any;
 };
+
+export declare type ListDto = {
+    startDate?: string;
+    endDate?: string;
+    pageNo?: number;
+    limit?: number;
+};

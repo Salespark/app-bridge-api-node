@@ -2,8 +2,13 @@ const {getRequest, postRequest, putRequest, deleteRequest} = require('../utils/r
 
 /**
  * Get the list of feedback
- *
+ * @public
  * @param {Object | null} data - Data to fetch the relevant feedback
+ * @param {string} [data.startDate]
+ * @param {string} [data.endDate]
+ * @param {number} [data.pageNo]
+ * @param {number} [data.limit]
+ * @param {string} [data.select]
  * @return {Promise} List of feedback
  * */
 const list = async (data) => {
@@ -13,7 +18,7 @@ const list = async (data) => {
 
 /**
  * Create a feedback
- *
+ * @public
  * @param {Object} data - Data to create feedback
  * @param {String} data.userId - ID of the user
  * @param {String} data.title
@@ -27,7 +32,7 @@ const create = async (data) => {
 
 /**
  * update a feedback
- *
+ * @public
  * @param {string} feedbackId - ID of the feedback
  * @param {Object} data - Data to update feedback
  * @param {String} data.userId - ID of the user
@@ -42,7 +47,7 @@ const update = async (feedbackId, data) => {
 
 /**
  * delete a feedback
- *
+ * @public
  * @param {string} feedbackId - ID of the feedback
  * @param {Object} data - Data to delete feedback
  * @param {String} data.userId - ID of the user

@@ -3,9 +3,11 @@ const webhookResources = require('./resources/webhook');
 const scriptTagResources = require('./resources/scriptTag');
 const cartResources = require('./resources/cart');
 const customerResources = require('./resources/customer');
+const featureResources = require('./resources/feature');
+const featureCommentResources = require('./resources/featureComment');
+const featureReactionResources = require('./resources/featureReaction');
 const feedbackResources = require('./resources/feedback');
-const feedbackCommentResources = require('./resources/comment');
-const feedbackReactionResources = require('./resources/feedbackReaction');
+const feedbackCommentResources = require('./resources/feedbackComment');
 const commentReactionResources = require('./resources/commentReaction');
 const initialize = require('./resources/initialize');
 const config = require('./resources/config');
@@ -99,6 +101,27 @@ class Bridge {
     customer = customerResources;
 
     /**
+     * Feature methods
+     *
+     * @public
+     * */
+    feature = featureResources;
+
+    /**
+     * Feature Comment methods
+     *
+     * @public
+     * */
+    featureComment = featureCommentResources;
+
+    /**
+     * Feature reaction methods
+     *
+     * @public
+     * */
+    featureReaction = featureReactionResources;
+
+    /**
      * Feedback methods
      *
      * @public
@@ -106,18 +129,11 @@ class Bridge {
     feedback = feedbackResources;
 
     /**
-     * Comment methods
+     * Feedback Comment methods
      *
      * @public
      * */
-    comment = feedbackCommentResources;
-
-    /**
-     * Feedback reaction methods
-     *
-     * @public
-     * */
-    feedbackReaction = feedbackReactionResources;
+    feedbackComment = feedbackCommentResources;
 
     /**
      * Comment reaction methods

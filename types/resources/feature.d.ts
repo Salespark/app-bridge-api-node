@@ -1,25 +1,24 @@
 import {ListDto, ResponseDto} from "../dto/types";
-
 /**
- * Get the list of feedback
+ * Get the list of feature
  * @public
- * @param {ListDto | null} data - Data to fetch the relevant feedback
+ * @param {ListDto | null} data - Data to fetch the relevant feature
  * @param {string} [data.startDate]
  * @param {string} [data.endDate]
  * @param {number} [data.pageNo]
  * @param {number} [data.limit]
  * @param {string} [data.select]
- * @return {Promise<ResponseDto>} List of feedback
+ * @return {Promise<ResponseDto>} List of feature
  * */
 export function list(data: ListDto | null): Promise<ResponseDto>;
 /**
- * Create a feedback
+ * Create a feature
  * @public
- * @param {Object} data - Data to create feedback
+ * @param {Object} data - Data to create feature
  * @param {String} data.userId - ID of the user
  * @param {String} data.title
  * @param {String} data.description
- * @return {Promise<ResponseDto>} Create a feedback
+ * @return {Promise<ResponseDto>} Create a feature
  * */
 export function create(data: {
     userId: string;
@@ -27,28 +26,28 @@ export function create(data: {
     description: string;
 }): Promise<ResponseDto>;
 /**
- * update a feedback
+ * update a feature
  * @public
- * @param {string} feedbackId - ID of the feedback
- * @param {Object} data - Data to update feedback
+ * @param {string} featureId - ID of the feature
+ * @param {Object} data - Data to update feature
  * @param {String} data.userId - ID of the user
  * @param {String} data.title
  * @param {String} data.description
- * @return {Promise<ResponseDto>} update a feedback
+ * @return {Promise<ResponseDto>} update a feature
  * */
-export function update(feedbackId: string, data: {
+export function update(featureId: string, data: {
     userId: string;
     title: string;
     description: string;
 }): Promise<ResponseDto>;
 /**
- * delete a feedback
+ * delete a feature
  * @public
- * @param {string} feedbackId - ID of the feedback
- * @param {Object} data - Data to delete feedback
+ * @param {string} featureId - ID of the feature
+ * @param {Object} data - Data to delete feature
  * @param {String} data.userId - ID of the user
- * @return {Promise<ResponseDto>} delete a feedback
+ * @return {Promise<ResponseDto>} delete a feature
  * */
-export function destroy(feedbackId: string, data: {
+export function destroy(featureId: string, data: {
     userId: string;
 }): Promise<ResponseDto>;
