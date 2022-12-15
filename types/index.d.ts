@@ -9,6 +9,7 @@ import featureReactionResources = require("./resources/featureReaction");
 import feedbackResources = require("./resources/feedback");
 import feedbackCommentResources = require("./resources/feedbackComment");
 import commentReactionResources = require("./resources/commentReaction");
+import sessionResources = require("./resources/session");
 /**
  * Bridge class
  * @class
@@ -109,5 +110,11 @@ declare class Bridge {
      * @public
      * */
     public commentReaction: typeof commentReactionResources;
+    /**
+     * session methods
+     *
+     * @public
+     * */
+    public session: typeof sessionResources;
 }
 export = Bridge;
