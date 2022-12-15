@@ -9,6 +9,7 @@ const featureReactionResources = require('./resources/featureReaction');
 const feedbackResources = require('./resources/feedback');
 const feedbackCommentResources = require('./resources/feedbackComment');
 const commentReactionResources = require('./resources/commentReaction');
+const sessionResources = require('./resources/session');
 const initialize = require('./resources/initialize');
 const config = require('./resources/config');
 const {constants} = require("./utils/constants");
@@ -141,6 +142,13 @@ class Bridge {
      * @public
      * */
     commentReaction = commentReactionResources;
+
+    /**
+     * session methods
+     *
+     * @public
+     * */
+    session = sessionResources;
 
 }
 
