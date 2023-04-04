@@ -30,7 +30,7 @@ const findByName = async (shop) => {
  * @return {Promise} The fetched marketplace
  * */
 const findById = async (id) => {
-    const res = await postRequest('/marketplace', {marketplaceId: id});
+    const res = await postRequest('/marketplace-by-id', {marketplaceId: id});
     return res?.data;
 };
 
@@ -58,7 +58,7 @@ const create = async (data) => {
  * @return {Promise} update a marketplace
  * */
 const update = async (data) => {
-    const res = await putRequest('/marketplace/create', data);
+    const res = await putRequest('/marketplace/update', data);
     return res?.data;
 };
 

@@ -1,4 +1,15 @@
-export = Bridge;
+import marketPlaceResources = require("./resources/marketPlace");
+import webhookResources = require("./resources/webhook");
+import scriptTagResources = require("./resources/scriptTag");
+import cartResources = require("./resources/cart");
+import customerResources = require("./resources/customer");
+import featureResources = require("./resources/feature");
+import featureCommentResources = require("./resources/featureComment");
+import featureReactionResources = require("./resources/featureReaction");
+import feedbackResources = require("./resources/feedback");
+import feedbackCommentResources = require("./resources/feedbackComment");
+import commentReactionResources = require("./resources/commentReaction");
+import sessionResources = require("./resources/session");
 /**
  * Bridge class
  * @class
@@ -7,10 +18,10 @@ declare class Bridge {
     /**
      * First method to call
      *
-     * @param {String} [apiKey = null] - Api key of the user
+     * @param {String | null} [apiKey = null] - Api key of the user
      * @public
      * */
-    public init(apiKey?: string): Promise<void>;
+    public init(apiKey?: string | null): Promise<void>;
     /**
      * Server token
      *
@@ -18,6 +29,21 @@ declare class Bridge {
      * @public
      * */
     public getToken(): string;
+    /**
+     * Generate Server token
+     *
+     * @param {String | null} [apiKey = null] - Api key of the user
+     * @return {Promise<String>} server token
+     * @public
+     * */
+    public generateToken(apiKey?: string | null): Promise<string>;
+    /**
+     * constants
+     * @public
+     * */
+    public getConstants(): {
+        URL: string;
+    };
     /**
      * Marketplace methods
      *
@@ -48,10 +74,47 @@ declare class Bridge {
      * @public
      * */
     public customer: typeof customerResources;
-    #private;
+    /**
+     * Feature methods
+     *
+     * @public
+     * */
+    public feature: typeof featureResources;
+    /**
+     * Feature Comment methods
+     *
+     * @public
+     * */
+    public featureComment: typeof featureCommentResources;
+    /**
+     * Feature reaction methods
+     *
+     * @public
+     * */
+    public featureReaction: typeof featureReactionResources;
+    /**
+     * Feedback methods
+     *
+     * @public
+     * */
+    public feedback: typeof feedbackResources;
+    /**
+     * Feedback Comment methods
+     *
+     * @public
+     * */
+    public feedbackComment: typeof feedbackCommentResources;
+    /**
+     * Comment reaction methods
+     *
+     * @public
+     * */
+    public commentReaction: typeof commentReactionResources;
+    /**
+     * session methods
+     *
+     * @public
+     * */
+    public session: typeof sessionResources;
 }
-import marketPlaceResources = require("./resources/marketPlace");
-import webhookResources = require("./resources/webhook");
-import scriptTagResources = require("./resources/scriptTag");
-import cartResources = require("./resources/cart");
-import customerResources = require("./resources/customer");
+export = Bridge;
