@@ -32,3 +32,14 @@ export function aggregate(payload: {
     marketplaceId: string;
     query: string;
 }): Promise<ResponseDto>;
+/**
+ * Create cart from the given marketplace
+ *
+ * @param {Object} payload - Data to Create cart and Customer
+ * @return {Promise<ResponseDto>} The Created cart from the marketplace
+ * */
+export function create(payload: {
+    payload: object;
+    customer: object;
+    marketplaceId: string;
+}): Promise<ResponseDto>;
