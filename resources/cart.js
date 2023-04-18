@@ -38,8 +38,22 @@ const aggregate = async (payload) => {
     return res?.data;
 };
 
+/**
+ * Create cart  from the given marketplace
+ *
+ * @param {Object} data - Data to create Cart
+ * @param {String} payload.marketplaceId - Marketplace id
+ * @param {String} payload.query - Mongodb aggregate query(JSON.stringify)
+ * @return {Promise} The fetched cart aggregation from the marketplace
+ * */
+const create = async (payload) => {
+    const res = await postRequest('/carts/create', payload);
+    return res?.data;
+};
+
 module.exports = {
     list,
     get,
-    aggregate
+    aggregate,
+    create
 };
