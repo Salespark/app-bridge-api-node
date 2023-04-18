@@ -12,7 +12,7 @@ const commentReactionResources = require('./resources/commentReaction');
 const sessionResources = require('./resources/session');
 const initialize = require('./resources/initialize');
 const config = require('./resources/config');
-const {constants} = require("./utils/constants");
+const constants = require("./utils/constants");
 
 /**
  * Bridge class

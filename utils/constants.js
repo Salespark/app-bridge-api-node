@@ -1,3 +1,12 @@
-exports.constants = {
-    URL: `https://webhooksapi.salesparkapps.com`
+/**
+ * Set Server entry point
+ *
+ * @return {String} Server base url
+ * */
+const url = () => {
+    return process.env.BRIDGE_PROD_URL ?? `https://webhooksapi.salesparkapps.com`;
+};
+
+module.exports = {
+    url
 }

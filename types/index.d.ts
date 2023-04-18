@@ -1,3 +1,4 @@
+import constants = require("./utils/constants");
 import marketPlaceResources = require("./resources/marketPlace");
 import webhookResources = require("./resources/webhook");
 import scriptTagResources = require("./resources/scriptTag");
@@ -41,9 +42,7 @@ declare class Bridge {
      * constants
      * @public
      * */
-    public getConstants(): {
-        URL: string;
-    };
+    public getConstants(): typeof constants;
     /**
      * Marketplace methods
      *
