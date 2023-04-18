@@ -41,7 +41,7 @@ const aggregate = async (payload) => {
 /**
  * Create cart  from the given marketplace
  *
- * @param {Object} data - Data to create Cart
+ * @param {Object} payload - Data to create Cart
  * @param {String} payload.marketplaceId - Marketplace id
  * @param {String} payload.query - Mongodb aggregate query(JSON.stringify)
  * @return {Promise} The fetched cart aggregation from the marketplace
