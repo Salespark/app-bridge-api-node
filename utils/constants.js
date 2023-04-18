@@ -4,7 +4,7 @@
  * @return {String} Server base url
  * */
 const url = () => {
-    return process.env.BRIDGE_PROD_URL ?? `https://webhooksapi.salesparkapps.com`;
+    return process.env.BRIDGE_URL ?? `https://webhooksapi.salesparkapps.com`;
 };
 
 module.exports = {
