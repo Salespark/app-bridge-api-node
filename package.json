@@ -1,6 +1,6 @@
 {
   "name": "@alpharages/app-bridge-api-node",
-  "version": "1.1.5",
+  "version": "2.0.0",
   "description": "A package to integrate Bridge APIS",
   "main": "index.js",
   "author": "Alpha Rages",
@@ -14,7 +14,8 @@
   ],
   "types": "types",
   "dependencies": {
-    "axios": "^1.2.0"
+    "axios": "^1.2.0",
+    "pusher-js": "^8.0.0"
   },
   "devDependencies": {
     "typescript": "^4.9.0"

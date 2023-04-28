@@ -1,3 +1,4 @@
+export { default as Pusher } from "pusher-js";
 export declare type ResponseDto = {
     statusCode: number;
     message: string;

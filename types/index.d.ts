@@ -11,6 +11,7 @@ import feedbackResources = require("./resources/feedback");
 import feedbackCommentResources = require("./resources/feedbackComment");
 import commentReactionResources = require("./resources/commentReaction");
 import sessionResources = require("./resources/session");
+import Pusher from "pusher-js";
 /**
  * Bridge class
  * @class
@@ -23,6 +24,12 @@ declare class Bridge {
      * @public
      * */
     public init(apiKey?: string | null): Promise<void>;
+    /**
+     * Initialized Pusher client
+     * @public
+     * @return {Pusher} - Pusher client instance
+     * */
+    public pusher(): Pusher;
     /**
      * Server token
      *

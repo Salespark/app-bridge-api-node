@@ -38,6 +38,14 @@ class Bridge {
     }
 
     /**
+     * Initialized Pusher client
+     * @public
+     * @return {Pusher} - Pusher client instance
+     * */
+    pusher() {
+        return config.pusherClient(this.#token);
+    }
+    /**
      * Server token
      *
      * @return {String} server token
