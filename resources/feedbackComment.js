@@ -5,15 +5,15 @@ const {getRequest, postRequest, putRequest, deleteRequest} = require('../utils/r
  *
  * @param {string} feedbackId - ID of the feedback
  * @param {Object | null} data - Data to fetch the relevant feedback
- * @param {string} [data.startDate]
- * @param {string} [data.endDate]
  * @param {number} [data.pageNo]
  * @param {number} [data.limit]
  * @param {string} [data.select]
+ * @param {string} [data.where] -- json string of mongo query
+ * @param {string} [data.sort]
  * @return {Promise} List of comment
  * */
 const list = async (feedbackId, data) => {
-    const res = await getRequest(`/feedback-comment/list/${feedbackId}`, data);
+    const res = await postRequest(`/feedback-comment/list/${feedbackId}`, data);
     return res?.data;
 };
 

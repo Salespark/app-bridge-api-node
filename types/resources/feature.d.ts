@@ -3,11 +3,11 @@ import {ListDto, ResponseDto} from "../dto/types";
  * Get the list of feature
  * @public
  * @param {ListDto | null} data - Data to fetch the relevant feature
- * @param {string} [data.startDate]
- * @param {string} [data.endDate]
  * @param {number} [data.pageNo]
  * @param {number} [data.limit]
  * @param {string} [data.select]
+ * @param {string} [data.where] -- json string of mongo query
+ * @param {string} [data.sort]
  * @return {Promise<ResponseDto>} List of feature
  * */
 export function list(data: ListDto | null): Promise<ResponseDto>;

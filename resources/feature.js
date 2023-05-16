@@ -4,15 +4,15 @@ const {getRequest, postRequest, putRequest, deleteRequest} = require('../utils/r
  * Get the list of feature
  * @public
  * @param {Object | null} data - Data to fetch the relevant feature
- * @param {string} [data.startDate]
- * @param {string} [data.endDate]
  * @param {number} [data.pageNo]
  * @param {number} [data.limit]
  * @param {string} [data.select]
+ * @param {string} [data.where] -- json string of mongo query
+ * @param {string} [data.sort]
  * @return {Promise} List of feature
  * */
 const list = async (data) => {
-    const res = await getRequest(`/feature/list`, data);
+    const res = await postRequest(`/feature/list`, data);
     return res?.data;
 };
 

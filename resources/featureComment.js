@@ -5,15 +5,15 @@ const {getRequest, postRequest, putRequest, deleteRequest} = require('../utils/r
  * @public
  * @param {string} featureId - ID of the feature
  * @param {Object | null} data - Data to fetch the relevant feature
- * @param {string} [data.startDate]
- * @param {string} [data.endDate]
  * @param {number} [data.pageNo]
  * @param {number} [data.limit]
  * @param {string} [data.select]
+ * @param {string} [data.where] -- json string of mongo query
+ * @param {string} [data.sort]
  * @return {Promise} List of comment
  * */
 const list = async (featureId, data) => {
-    const res = await getRequest(`/feature-comment/list/${featureId}`, data);
+    const res = await postRequest(`/feature-comment/list/${featureId}`, data);
     return res?.data;
 };
 

@@ -4,12 +4,12 @@ import {ListDto, ResponseDto} from "../dto/types";
  *
  * @param {string} feedbackId - ID of the feedback
  * @param {ListDto | null} data - Data to fetch the relevant feedback
- * @param {string} [data.startDate]
- * @param {string} [data.endDate]
  * @param {number} [data.pageNo]
  * @param {number} [data.limit]
  * @param {string} [data.select]
- * @return {Promise} List of comment
+ * @param {string} [data.where] -- json string of mongo query
+ * @param {string} [data.sort]
+ * @return {Promise<ResponseDto>} List of comment
  * */
 export function list(feedbackId: string, data: ListDto | null): Promise<ResponseDto>;
 /**
@@ -20,7 +20,7 @@ export function list(feedbackId: string, data: ListDto | null): Promise<Response
  * @param {String} data.feedbackId
  * @param {String} data.comment
  * @param {String | null} [data.parentId] - comment id of parent comment
- * @return {Promise} Create a comment
+ * @return {Promise<ResponseDto>} Create a comment
  * */
 export function create(data: {
     userId: string;
@@ -35,7 +35,7 @@ export function create(data: {
  * @param {Object} data - Data to update comment
  * @param {String} data.userId - ID of the user
  * @param {String} data.comment
- * @return {Promise} update a comment
+ * @return {Promise<ResponseDto>} update a comment
  * */
 export function update(commentId: string, data: {
     userId: string;
@@ -47,7 +47,7 @@ export function update(commentId: string, data: {
  * @param {string} commentId - ID of the comment
  * @param {Object} data - Data to delete comment
  * @param {String} data.userId - ID of the user
- * @return {Promise} delete a comment
+ * @return {Promise<ResponseDto>} delete a comment
  * */
 export function destroy(commentId: string, data: {
     userId: string;
