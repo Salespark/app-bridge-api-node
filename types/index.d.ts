@@ -11,6 +11,7 @@ import feedbackResources = require("./resources/feedback");
 import feedbackCommentResources = require("./resources/feedbackComment");
 import commentReactionResources = require("./resources/commentReaction");
 import sessionResources = require("./resources/session");
+import productResources = require("./resources/product");
 import Pusher from "pusher-js";
 /**
  * Bridge class
@@ -122,5 +123,11 @@ declare class Bridge {
      * @public
      * */
     public session: typeof sessionResources;
+    /**
+     * product methods
+     *
+     * @public
+     * */
+    public product: typeof productResources;
 }
 export = Bridge;

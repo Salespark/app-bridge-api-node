@@ -36,6 +36,9 @@ export function aggregate(payload: {
  * Create cart from the given marketplace
  *
  * @param {Object} payload - Data to Create cart and Customer
+ * @param {Object} payload.payload - Data to Cart
+ * @param {Object} payload.customer - Data to Customer
+ * @param {string} payload.marketplaceId - Data to Marketplace id
  * @return {Promise<ResponseDto>} The Created cart from the marketplace
  * */
 export function create(payload: {
