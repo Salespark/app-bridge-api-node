@@ -8,7 +8,6 @@ import { ResponseDto } from "../dto/types";
  * @param {Object} data.payload - Data payload
  * @param {number} [data.payload.pageNo]
  * @param {number} [data.payload.limit]
- * @param {string} [data.payload.select]
  * @param {string} [data.payload.where] - json string of mongo query
  * @param {string} [data.payload.sort]
  * @param {string} [data.payload.select] - collection keys
@@ -60,3 +59,9 @@ export function createOrUpdate(data: {
         [key: string]: any;
     }
 }): Promise<ResponseDto>;
+/**
+ * Delete product from the given marketplace
+ *
+ * @return {Promise<ResponseDto>}
+ * */
+export function deleteByMarketplaceId(): Promise<ResponseDto>;

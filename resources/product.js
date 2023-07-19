@@ -1,4 +1,4 @@
-const {postRequest} = require('../utils/requests');
+const {postRequest, deleteRequest} = require('../utils/requests');
 
 /**
  * Get the list of products form the given marketplace
@@ -58,9 +58,20 @@ const createOrUpdate = async (data) => {
     return res?.data;
 };
 
+/**
+ * Delete product from the given marketplace
+ *
+ * @return {Promise}
+ * */
+const deleteByMarketplaceId = async () => {
+    const res = await deleteRequest('/products/delete-by-marketplaceId', {});
+    return res?.data;
+};
+
 module.exports = {
     list,
     get,
     aggregate,
-    createOrUpdate
+    createOrUpdate,
+    deleteByMarketplaceId
 };
