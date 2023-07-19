@@ -62,6 +62,7 @@ export function createOrUpdate(data: {
 /**
  * Delete product from the given marketplace
  *
+ * @param {String} marketplaceId - Marketplace id
  * @return {Promise<ResponseDto>}
  * */
-export function deleteByMarketplaceId(): Promise<ResponseDto>;
+export function deleteByMarketplaceId(marketplaceId: string): Promise<ResponseDto>;

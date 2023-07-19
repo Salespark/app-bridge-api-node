@@ -61,10 +61,11 @@ const createOrUpdate = async (data) => {
 /**
  * Delete product from the given marketplace
  *
+ * @param {String} marketplaceId - Marketplace id
  * @return {Promise}
  * */
-const deleteByMarketplaceId = async () => {
-    const res = await deleteRequest('/products/delete-by-marketplaceId', {});
+const deleteByMarketplaceId = async (marketplaceId) => {
+    const res = await deleteRequest(`/products/delete-by-marketplaceId/${marketplaceId}`, {});
     return res?.data;
 };
 
