@@ -62,15 +62,28 @@ const update = async (data) => {
  * @param {String} data.customerId - ID of the customer
  * @return {Promise}
  * */
-const deleteCustomer = async (data) => {
-    const res = await deleteRequest('/customers/delete', data);
+const softDelete = async (data) => {
+    const res = await deleteRequest('/customers/soft-delete', data);
     return res?.data;
 };
+
+/**
+ * Delete customer from the given marketplace
+ *
+ * @param {String} marketplaceId - Marketplace id
+ * @return {Promise}
+ * */
+const deleteByMarketplaceId = async (marketplaceId) => {
+    const res = await deleteRequest(`/customers/delete-by-marketplaceId/${marketplaceId}`, {});
+    return res?.data;
+};
+
 
 module.exports = {
     list,
     getById,
     create,
     update,
-    deleteCustomer,
+    softDelete,
+    deleteByMarketplaceId,
 };

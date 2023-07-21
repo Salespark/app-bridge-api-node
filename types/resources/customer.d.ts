@@ -60,7 +60,15 @@ export function update(data: {
  * @param {String} data.customerId - ID of the customer
  * @return {Promise<ResponseDto>}
  * */
-export function deleteCustomer(data: {
+export function softDelete(data: {
     marketplaceId: string;
     customerId: string;
 }): Promise<ResponseDto>;
+
+/**
+ * Delete customer from the given marketplace
+ *
+ * @param {String} marketplaceId - Marketplace id
+ * @return {Promise<ResponseDto>}
+ * */
+export function deleteByMarketplaceId(marketplaceId: string): Promise<ResponseDto>;
