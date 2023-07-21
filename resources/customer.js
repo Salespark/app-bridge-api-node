@@ -1,4 +1,4 @@
-const {postRequest, putRequest} = require('../utils/requests');
+const {postRequest, putRequest, deleteRequest} = require('../utils/requests');
 
 /**
  * Get the list of customers form the given marketplace
@@ -54,9 +54,23 @@ const update = async (data) => {
     return res?.data;
 };
 
+/**
+ * Delete customer from the given marketplace and customer id
+ *
+ * @param {Object} data - Data to delete customer
+ * @param {String} data.marketplaceId - ID of the marketplace
+ * @param {String} data.customerId - ID of the customer
+ * @return {Promise}
+ * */
+const deleteCustomer = async (data) => {
+    const res = await deleteRequest('/customers/delete', data);
+    return res?.data;
+};
+
 module.exports = {
     list,
     getById,
     create,
-    update
+    update,
+    deleteCustomer,
 };

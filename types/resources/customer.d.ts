@@ -51,3 +51,16 @@ export function update(data: {
     email: string;
     payload: any;
 }): Promise<ResponseDto>;
+
+/**
+ * Delete customer from the given marketplace and customer id
+ *
+ * @param {Object} data - Data to delete customer
+ * @param {String} data.marketplaceId - ID of the marketplace
+ * @param {String} data.customerId - ID of the customer
+ * @return {Promise<ResponseDto>}
+ * */
+export function deleteCustomer(data: {
+    marketplaceId: string;
+    customerId: string;
+}): Promise<ResponseDto>;
